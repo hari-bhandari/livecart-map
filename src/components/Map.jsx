@@ -19,12 +19,15 @@ const Map = ({location}) => {
         console.log(map.center.lat(), map.center.lng()) //new center when user drags the map
     }
     useEffect(() => {
-        if (data?.length === 0) { //only updates range when the array is empty
-            if (range < range * 2) {
-                setRange(range * 2) //doubling the range //distance
-                setZoom(zoom - 2)
-            }
-        }
+        //to do list
+        //make the range bigger if data is not found
+        //zoom out map too.
+        // if (data?.length === 0) { //only updates range when the array is empty
+        //     if (range < range * 2) {
+        //         setRange(range * 2) //doubling the range //distance
+        //         setZoom(zoom - 2)
+        //     }
+        // }
     }, [data])
 
     return (
