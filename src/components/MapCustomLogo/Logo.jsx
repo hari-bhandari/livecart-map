@@ -16,7 +16,7 @@ const Logo = ({data,zoom}) => {
     return (
         <>
             <div className="holder" onClick={OnClick}>
-                <img src={StoreTypeImagesData[data?.type]} alt={'our store location'} style={{width:sizes[zoom]}}/>
+                <img src={StoreTypeImagesData[data?.type]} alt={'our store location'} style={{width:sizes[zoom],top:'50%',left:'50%',transform:'translate(-50%, -50%)'}}/>
                 <div id="popup" className="popup" style={{display: `${open ? 'block' : 'none'}`}} ref={ref}>
                     <div className="content">
                         <img src={StoreTypeImagesData[data?.type]} alt={'our store location'}/>

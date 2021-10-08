@@ -6,7 +6,7 @@ import {measure, sizes} from "./utils";
 import Logo from "./MapCustomLogo/Logo";
 
 const MyLocation = ({zoom}) => (
-    <img src="https://res.cloudinary.com/wisecart/image/upload/v1633590498/location_js4dam.png" alt="My Location" style={{width:sizes[zoom]}} />
+    <img src="https://res.cloudinary.com/wisecart/image/upload/v1633590498/location_js4dam.png" style={{top:'50%',left:'50%',transform:'translate(-50%, -50%)'}} alt="My Location" style={{width:sizes[zoom]}} />
 )
 const zoomLevelIntoMetres = (zoomLevel) => {
   return (40000/(2**zoomLevel))*2000
@@ -37,15 +37,6 @@ const Map = ({location,setLocation}) => {
     //     // }
     // }, [data])
 
-    const handleApiLoaded = (map, maps,places) => {
-        const bounds =new maps.LatLngBounds()
-        console.log(bounds)
-        // Fit map to bounds
-        // Bind the resize listener
-        // bindResizeListener(map, maps, bounds);
-
-    };
-
     return (
         <div style={{height: '100vh', width: '100%'}}>
             {loading ?
@@ -56,7 +47,6 @@ const Map = ({location,setLocation}) => {
                     zoom={zoom}
                     onDragEnd={(map) => OnDragEnd(map)}
                     yesIWantToUseGoogleMapApiInternals
-                    onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                     onZoomAnimationEnd={(data)=>{
                         setZoom(data)
                     }
