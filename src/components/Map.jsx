@@ -10,7 +10,7 @@ const MyLocation = ({zoom}) => (
 )
 const zoomLevelIntoMetres = (zoomLevel) => {
   return (40000/(2**zoomLevel))*2000
-}
+} //calculates the width of map in metres
 
 const Map = ({location,setLocation}) => {
     const [zoom, setZoom] = useState(14) //zoom
