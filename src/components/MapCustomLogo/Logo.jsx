@@ -2,8 +2,9 @@ import React, {useRef, useState} from 'react';
 import './Logo.css'
 import useOnClickOutside from "../useOnClickOutside";
 import {StoreTypeImagesData} from "../StoreTypeImagesData";
+import {sizes} from "../utils";
 
-const Logo = ({data}) => {
+const Logo = ({data,zoom}) => {
     const [open, setOpen] = useState(false) //state for popup
     const ref = useRef();
     useOnClickOutside(ref, () => setOpen(() => false)); //closing popup when clicked somewhere else.
@@ -15,7 +16,7 @@ const Logo = ({data}) => {
     return (
         <>
             <div className="holder" onClick={OnClick}>
-                <img src={StoreTypeImagesData[data?.type]} alt={'our store location'}/>
+                <img src={StoreTypeImagesData[data?.type]} alt={'our store location'} style={{width:sizes[zoom]}}/>
                 <div id="popup" className="popup" style={{display: `${open ? 'block' : 'none'}`}} ref={ref}>
                     <div className="content">
                         <img src={StoreTypeImagesData[data?.type]} alt={'our store location'}/>

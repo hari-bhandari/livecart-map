@@ -6,8 +6,8 @@ import React, {useState} from "react";
 
 function App() {
     const [location, setLocation] = useState({
-        lat: 40.807537,
-        lng: -73.962570
+        lat: 40.74937175736833,
+        lng: -73.97437051742462
     }) //initial geolocation
     const getGeoLocation = () => {
         if ("geolocation" in navigator) { //checking if geolocation is available on navigator
